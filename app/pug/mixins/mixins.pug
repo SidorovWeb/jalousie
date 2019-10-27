@@ -1,0 +1,47 @@
+mixin form(classNameForm, text, w100, area)
+	form(class=`form form-modal ${classNameForm}`, action='#')
+		.form__input-wrapper
+			label.form__label Имя ...
+			input.form__input(name='name' type='text' required)
+			span.form__input-icon.icon-user
+		.form__input-wrapper
+			label.form__label Телефон ...
+			input.form__input(name='phone' type='tel' required)
+			span.form__input-icon.icon-phone
+		if area
+			.form__textarea-wrap
+				label.form__label.label-area Ваш вопрос ...
+				textarea.form__textarea(name='text')
+		.form__button
+			button(class=`btn btn-call-orange ${w100}` type='submit')= text
+			
+
+mixin mini-slider(className, classNameJS)
+		div(class=`mini-slider ${className} ${classNameJS}`)
+				each slide in ['1', '2', '3', '4']
+					.mini-slider-container
+						img(class='mini-slider__img' src=`img/slider/minislide${slide}.jpg`, alt="Виды жалюзи.")
+
+
+mixin slide(fotoLink, clientName, vk, text, addClass, addClass2)
+	div(class=`slide ${addClass}`)
+		+mini-slider('mini-slider-review', 'js-mini-slider', 'mini-slider-review-wrap')
+		.our-client
+			.our-client-img
+				img(src=`${fotoLink}`, alt="Клиент.")
+			.our-client-contact
+				h4.our-client__name= clientName
+				a.our-client__vk-id= vk
+		.client__desc
+			+audio
+			.client__text 
+				p.client__text-paragraf= text
+
+
+mixin audio
+	audio(preload='none', controls='')
+		source(src='audio/pam.mp3' type="audio/mpeg")
+		source(src='audio/pam.ogg' type="audio/ogg")
+
+
+

@@ -1,0 +1,170 @@
+
+@mixin placeholder {
+	&.placeholder { @content }
+	&:-moz-placeholder { @content }
+	&::-webkit-input-placeholder { @content }
+}
+
+/*функция переводит шрифт в писелях в em*/
+$browser-context : 16;
+
+@function em($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}em;
+}
+
+
+/*функция переводит шрифт в писелях в rem*/ 
+
+$baseFontSize : 16;
+
+@function rem($pixels, $context: $baseFontSize) {
+	@if (unitless($pixels)) {
+		$pixels: $pixels * 1px;
+	}
+
+	@if (unitless($context)) {
+		$context: $context * 1px;
+	}
+
+	@return $pixels / $context * 1rem;
+}
+
+@mixin size($a, $b) {
+		width: $a;
+	@if b {
+		height: $b;
+	}
+	@else {
+		height: $a;
+	}
+}
+
+@mixin trans($axis: 'both') {
+	position: absolute;
+	@if $axis == 'both' {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	@if $axis == 'x' {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	@if $axis == 'y' {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+
+
+@mixin padding($t, $l, $b, $r) {
+	padding-top: $t;
+	padding-left: $l;
+	padding-bottom: $b;
+	padding-right: $r;
+}
+
+
+@mixin bac-button($pos, $color, $transf) {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 0;
+	left: 0;
+	background-color: $color;
+	transform: translateY($transf);
+
+	@if $pos == 'top' {
+		top: 50%;
+	}
+	@if $pos == 'bottom' {
+		bottom: 50%;
+	}
+}
+
+
+@mixin fonts($ff) {
+	@if $ff == 'med' {
+		font-family: 'PF Din Text Cond Pro', Arial, Helvetica, sans-serif;
+		font-weight: 500;
+		font-style: normal;
+	}
+
+	@if $ff == 'light' {
+		font-family: 'PF Din Text Cond Pro', Arial, Helvetica, sans-serif;
+		font-weight: 300;
+		font-style: normal;
+	}
+
+	@if $ff == 'bold' {
+		font-family: 'PF Din Text Cond Pro', Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		font-style: normal;
+	}
+}
+
+
+@mixin button_active($color) {
+	&:active {
+        	background-color: darken($color, 5%);
+        	border: 2px solid darken($color, 5%);
+        &:after {
+            opacity: .8;
+        }
+        &:before {
+            opacity: .8;
+        }
+    }
+}
+
+
+@mixin desktop {
+	@media only screen and (max-width: 1200px) {
+		@content;
+	}
+}
+@mixin laptop {
+	@media only screen and (max-width: 992px) {
+		@content;
+	}
+}
+@mixin tablets {
+	@media only screen and (max-width: 768px) {
+		@content;
+	}
+}
+@mixin phones {
+	@media only screen and (max-width: 576px) {
+		@content;
+	}
+}
+
+@mixin med_phones {
+	@media only screen and (max-width: 480px) {
+		@content;
+	}
+}
+
+@mixin small_phones {
+	@media only screen and (max-width: 320px) {
+		@content;
+	}
+}
+
+@mixin before {
+	    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba($White, .2);
+        z-index: 1;
+    }
+}
+
+
+

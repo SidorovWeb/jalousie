@@ -1,0 +1,19 @@
+section.section.js-sliders
+	h2.visually-hidden Слайдер из картинок.
+	.container
+		.row
+			.col
+				.slider-wrap
+					.slider.js-slider
+						each slide in ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+							.slider-container
+								div(class=`slider-image slide${slide}`)
+									img(src=`img/slider/slide${slide}.jpg`, alt="Наши жалюзи.")
+		.row
+			.col
+				.slider-nav-wrap
+					.slider-nav.js-slider-nav
+						each slide in ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+							.slider-nav-container
+								div(class=`slider-nav-image slide${slide}`)
+									img(src=`img/slider/slide-min${slide}.jpg`, alt="Наши жалюзи.")

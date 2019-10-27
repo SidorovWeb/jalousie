@@ -1,0 +1,56 @@
+.arrow-up {
+    position: fixed;
+    display: block;
+    width: 50px;
+    height: 50px;
+    z-index: 99;
+    bottom: 10px;
+    right: 15px;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+
+.arrow__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    transform: rotate(-90deg);
+    margin-top: -50%;
+}
+
+.arrow-up .icon-right-bold {
+    font-size: rem(35);
+    color: lighten($Orange, 15%);
+
+    &:active {
+        color: darken($Orange, 20%);
+    }
+
+    &:hover {
+        color: $Orange;
+    }
+}
+
+.arrow-up_anim {
+    animation-name: arrowUP;
+    animation-duration: 1s;
+}
+.arrow-up_opacity {
+    opacity: 1;
+}
+
+@keyframes arrowUP {
+    0% {
+        bottom: 2vh;
+        color: darken($Orange, 15%);
+        opacity: 1;
+    }
+
+    100% {
+        bottom: 50vh;
+        color: $Orange;
+        opacity: 0;
+    }
+}

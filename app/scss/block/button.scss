@@ -1,0 +1,140 @@
+.btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    text-transform: uppercase;
+    background-color: transparent;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn-order-green {
+    height: rem(41);
+		flex-grow: 1;
+		@include fonts(bold);
+    font-size: rem(14);
+    color: $Green;
+    border: 2px solid $Green;
+    &:hover {
+        background-color: $Green;
+        color: $White;
+    }  
+}
+
+.btn-call-small {
+	  height: rem(41);
+		flex-grow: 1;
+		@include fonts(bold);
+    font-size: rem(14);
+    color: $Green;
+    border: 2px solid $Green;
+    &:hover {
+        background-color: $Green;
+        color: $White;
+    }
+}
+.btn-call-orange {
+    width: rem(250);
+    height: rem(60);
+    font-size: rem(20);
+    color: $Orange;
+		@include fonts(bold);
+    border: 2px solid $Orange;
+    &:hover {
+        background-color: $Orange;
+        color: $White;
+    }
+}
+
+.btn-call-orange_big {
+    width: rem(299);
+    height: rem(60);
+}
+.btn-question-white_big {
+    width: rem(299);
+		height: rem(60);
+		@include tablets {
+			width: 100%;
+		}
+}
+.btn-question-white {
+    @include fonts(bold);
+    font-size: rem(20);
+    color: $White;
+    border: 2px solid $White;
+    &:hover {
+        background-color: $White;
+        color: $Black;
+    }
+}
+
+.btn-call-orange:active {
+    opacity: 1;
+    transition: 0.7s;
+    background-color: darken($Orange, 16%);
+    border: 2px solid darken($Orange, 16%);
+}
+
+.btn-question-white:active {
+    opacity: 1;
+    transition: 0.7s;
+    background-color: darken($White, 16%);
+    border: 2px solid darken($White, 16%);
+}
+
+.btn-order-green:active ,.btn-call-small:active {
+    opacity: 1;
+    transition: 0.7s;
+    background-color: darken($Green, 16%);
+    border: 2px solid darken($Green, 16%);
+}
+
+.btn-call-orange_active {
+    background-color: $Orange;
+    color: $White;
+}
+
+.btn-order-green_active {
+    background-color: $Green;
+    color: $White;
+}
+
+.btn_margin {
+    margin-left: rem(18);
+
+    @include phones {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+.btn_ml_10 {
+    margin-left: rem(10);
+}
+
+.w100 {
+    width: 100%;
+}
+
+.button-block {
+    @include phones {
+        width: 100%;
+    }
+}
+
+.type .btn-call-orange_big {
+    @include tablets {
+        width: 100%;
+    }
+
+    @include phones {
+        width: rem(299);
+    }
+}

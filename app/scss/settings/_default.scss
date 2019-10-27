@@ -1,0 +1,129 @@
+ /*сброс*/
+/* :root {
+  font-size: calc(1vw + 1vh + .5vmin);
+}*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    &:before,
+    &:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+
+*::-webkit-input-placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+*:-moz-placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+*::-moz-placeholder {
+    color: #666;
+    opacity: 1;
+}
+
+*:-ms-input-placeholder {
+    color: #666;
+    opacity: 1;
+}
+*:focus {
+    outline: 0;
+}
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+    color: #666;
+}
+
+body input:required:valid,
+body textarea:required:valid {
+    color: #666;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+textarea {
+    resize: none;
+}
+
+input[type="text"]:focus {
+    outline: none;
+}
+button {
+    cursor: pointer;
+}
+input, textarea, button {
+    border-width: 0;
+    border-style: none;
+    border-image: none;
+}
+input[type="text"]:focus {
+    outline: none;
+}
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  font-size: 16px;
+}
+
+a {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: none
+}
+
+a:link {
+    text-decoration: none
+}
+a:focus {
+    outline: 0;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+		position: relative;
+		text-align: center;
+}
+img:before {
+    content: "УПС, изображение ниже сломалось :(";
+    display: block;
+		margin-bottom: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    line-height: 2;
+}
+img:after {
+    content: "(url: "attr(src) ")";
+    display: block;
+    font-size: 12px;
+}
+
+input:focus,
+textarea:focus {
+    outline: 0;
+}
+
+button:focus{
+    outline: 0;
+}

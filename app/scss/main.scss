@@ -1,0 +1,68 @@
+@import "../libs/bootstrap4/_grid.scss";
+@import "normalize/_normalize.scss";
+@import "fonts/**/*.scss";
+@import "settings/**/*.scss";
+@import "mixins/**/*.scss";
+@import "block/mmenu.scss";
+@import "block/button.scss";
+@import "libs/**/*.scss";
+
+
+html {
+	height: 100%;
+	font-size: 16px;
+
+	@include laptop {
+		font-size: 15px;
+	}
+
+	@include med_phones {
+		font-size: 14px;
+	}
+}
+
+body {
+	height: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	min-width: 320px;
+	line-height: 1.5;
+	background: $MainBG;
+	color: $Black;
+	@include fonts(light);
+	-webkit-font-smoothing: antialiased;
+}
+
+.visually-hidden {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+}
+
+.page {
+	position: relative;
+	min-height: 100%;
+	overflow: hidden;
+	background-color: $White;
+	z-index: 1;
+}
+
+.container {
+	@include tablets {
+		max-width: 100%;
+	}
+}
+
+@import "block/header.scss";
+@import "block/type.scss";
+@import "block/slider.scss";
+@import "block/stock.scss";
+@import "block/review.scss";
+@import "block/audio.scss";
+@import "block/footer.scss";
+@import "spriteSVG/**/*.scss";
+@import "block/arrow-up.scss";
+@import "block/modal.scss";

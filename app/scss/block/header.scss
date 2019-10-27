@@ -1,0 +1,396 @@
+.holder {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 999;
+}
+
+.preloader {
+  width: $size + px;
+  height: $size + px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  animation: rotatePreloader $time + s infinite ease-in;
+}
+@keyframes rotatePreloader {
+  0% {
+  transform: translateX(-50%) translateY(-50%) rotateZ(0deg);
+  }
+  100% {
+  transform: translateX(-50%) translateY(-50%) rotateZ(-360deg);
+  }
+}
+.preloader div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.preloader div:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  width: 10%;
+  height: 10%;
+  background-color: $color;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+@for $i from 1 through $count {
+  .preloader div:nth-child(#{$i}) {
+    transform: rotateZ(((360 / $count) * ($i - 1)) + deg);
+    animation: rotateCircle + $i $time + s infinite linear;
+    z-index: $count - $i;
+  }
+  @keyframes rotateCircle#{$i} {
+    #{percentage(((50 / $count) * ($i - 1)) / 100)} {
+      opacity: 0;
+    }
+    #{percentage((((50 / $count) + 0.0001) * ($i - 1)) / 100)} {
+      opacity: 1;
+      transform: rotateZ((0 - ((360 / $count) * ($i - 2))) + deg);
+    }
+    #{percentage((((50 / $count) * ($i - 0)) + 2) / 100)} {
+      transform: rotateZ((0 - ((360 / $count) * ($i - 1))) + deg);
+    }
+    #{percentage(((50 + ((50 / $count) * ($i - 0))) + 2) / 100)} {
+      transform: rotateZ((0 - ((360 / $count) * ($i - 1))) + deg);
+    }
+    100% {
+      transform: rotateZ((0 - ((360 / $count) * ($count - 1))) + deg);
+      opacity: 1;
+    }
+  }
+}
+
+
+.top-line {
+    position: relative;
+}
+
+.services,
+.phone {
+    display: inline-block;
+    padding-top: rem(19);
+    padding-bottom: rem(10);
+}
+
+.services {
+    @include trans(x);
+    text-align: center;
+
+    &__head {
+        @include fonts(med);
+        font-size: rem(17);
+        text-transform: uppercase;
+
+        @include tablets {
+            font-size: 16px;
+        }
+    }
+
+    &__footer {
+        @include fonts(light);
+        margin-top: rem(-2);
+        font-size: rem(16);
+    }
+
+    @include laptop {
+        position: static;
+        transform: translateX(0);
+        left: 0;
+        text-align: left;
+    }
+
+    @include med_phones {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+.phone {
+    position: relative;
+    float: right;
+    text-align: right;
+    &-number {
+        position: relative;
+        font-size: rem(24);
+        color: $Black;
+        @include fonts(med);
+        transition: all 0.5s ease;
+
+        &:hover {
+            color: $Orange;
+            .icon-phonelink {
+                color: $Orange;
+            }
+        }
+
+        @include laptop {
+            font-size: 20px;
+        }
+
+        @include tablets {
+            font-size: 18px;
+        }
+        @include med_phones {
+            margin-left: 20px;
+        }
+    }
+
+    @include med_phones {
+        width: 100%;
+        text-align: center;
+        padding-top: 0;
+    }
+
+    @include tablets {
+        margin-top: 0;
+    }
+}
+
+.icon-phonelink {
+    position: absolute;
+    left: -25px;
+    top: 5px;
+    font-size: 20px;
+    color: $Black;
+    transition: all 0.5s ease;
+
+    @include laptop {
+        top: 3px;
+    }
+
+    @include tablets {
+        font-size: 18px;
+    }
+}
+
+.time-work {
+    font-size: rem(13.5);
+    @include fonts(light);
+    margin-top: rem(-4.5);
+}
+
+.nav {
+    background-color: #fafdfa;
+    overflow: hidden;
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        position: relative;
+        &:active {
+            &:after {
+                opacity: .8;
+                background-color: darken($Green, 16%);
+            }
+            &:before {
+                opacity: .8;
+                background-color: darken($Green, 16%);
+            }
+        }
+
+        &:hover {
+            &:before {
+                height: 100%;
+            }
+            &:after {
+                height: 100%;
+            }
+            .nav__link {
+                color: #fff;
+            }
+        }
+
+        &:before {
+            @include bac-button(top, $Green, -50%);
+            transition: all 0.5s ease;
+        }
+
+        &:after {
+            @include bac-button(bottom, $Green, 50%);
+            transition: all 0.5s ease;
+        }
+    }
+
+    &__link {
+        position: relative;
+        @include padding(rem(14), rem(14), rem(14), rem(14));
+        font-size: rem(20);
+        @include fonts(light);
+        color: $Black;
+        background-color: transparent;
+        transition: all 0.5s ease;
+        z-index: 10;
+    }
+}
+
+.nav {
+    @include tablets {
+        display: none;
+    }
+}
+
+.nav__link:active {
+    background-color: darken($Green, 16%);
+}
+
+.nav__item_active {
+    &:before,
+    &:after {
+        transform: translate(0);
+        height: 100%;
+    }
+    .nav__link {
+        color: #fff;
+    }
+}
+
+.header {
+    position: relative;
+    height: rem(560);
+    width: 100%;
+    @include fonts(bold);
+    text-transform: uppercase;
+    overflow: hidden;
+
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url(../img/header/fon.png);
+        z-index: 1;
+    }
+    &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-image: url(../img/header/headerBG.jpg);
+        animation-name: fadeInOut;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-duration: 13s;
+        animation-direction: alternate;
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(1.1, 1.1);
+    }
+}
+
+.header > .container {
+    @include phones {
+        padding:  0;
+    }
+}
+
+.header-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 10;
+
+    @include phones {
+        align-items: center;
+    }
+}
+
+.header-desc {
+    margin-top: rem(100);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include phones {
+        margin-top: 60px;
+    }
+}
+
+.header-desc__text {
+    display: inline-block;
+    @include fonts(bold);
+    @include padding(rem(6), rem(15), 0, rem(12));
+    background-color: $Green;
+    color: $White;
+    font-size: rem(35);
+    line-height: 1.2;
+    border-radius: 2px;
+
+    @include tablets {
+        font-size: rem(27);
+    }
+
+    @include med_phones {
+        font-size: rem(25);
+    }
+}
+
+.header-desc__text:not(:first-child) {
+    margin-top: 11px;
+}
+
+.exit-free {
+    position: relative;
+    margin-top: rem(86);
+    display: inline-block;
+    font-size: rem(20);
+
+
+    @include phones {
+        margin-top: rem(56);
+    }
+
+    @include med_phones {
+        font-size: 18px;
+    }
+
+    &_orange {
+        color: $Orange;
+
+        @include phones {
+            display: block;
+            text-align: center;
+            font-size: 21px;
+        }
+    }
+}
+
+.button-block {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: rem(11);
+
+    @include phones {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,232 @@
+.footer {
+    width: 100%;
+    padding-top: rem(80);
+    padding-bottom: rem(30);
+    color: $White;
+    background-color: $Black;
+
+    @include desktop {
+        padding-top: rem(60);
+        padding-bottom: rem(20);
+    }
+
+    @include laptop {
+        padding-top: rem(50);
+        padding-bottom: rem(10);
+    }
+
+    .btn_very_big {
+        @include desktop {
+            width: 100%;
+        }
+    }
+}
+
+.padding {
+    @include phones {
+        padding: 0;
+    }
+}
+
+.map {
+    background-color: #ccc;
+    border-radius: 2px;
+}
+
+.contact-wrap {
+    display: flex;
+    flex-direction: column;
+    padding-left: rem(11);
+    min-height: 100%;
+
+    @include tablets {
+
+    padding-left: 0;
+    }
+}
+
+.contact__bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+
+    @include desktop {
+        display: block;
+    }
+
+    @include phones {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        @include med_phones {
+            margin-left: 0;
+        }
+    }
+}
+
+.contact {
+    margin-top: rem(-11);
+
+    @include phones {
+        margin-top: 15px;
+    }
+    &-title {
+        @include fonts(bold);
+        font-size: rem(30);
+        text-transform: uppercase;
+    }
+}
+
+.address {
+    margin-top: rem(60);
+    @include fonts(light);
+
+    @include desktop {
+        margin-top: rem(50);
+    }
+
+    @include tablets {
+        margin-top: 15px;
+    }
+
+    &__icon {
+        font-size: rem(13);
+        color: #ccc;
+        text-transform: uppercase;
+
+        &:before {
+            font-family: 'icomoon';
+            content: '\e902';
+            font-size: 11px;
+            margin-right: 3px;
+        }
+    }
+
+    &__text {
+        font-size: rem(20);
+    }
+}
+
+.phone-footer {
+    margin-top: rem(16);
+    @include fonts(light);
+
+    @include phones {
+        padding-bottom: 15px;
+    }
+
+    &__icon {
+        font-size: rem(13);
+        color: #ccc;
+        text-transform: uppercase;
+
+        &:before {
+            font-family: 'icomoon';
+            content: '\e901';
+            font-size: 11px;
+            margin-right: 3px;
+        }
+    }
+
+    &__link {
+        color: $White;
+        font-size: rem(20);
+        transition: color 0.5s ease;
+
+        &:hover {
+            color: $Orange;
+        }
+    }
+}
+
+.social {
+    display: inline-block;
+}
+
+.social-vk {
+    display: inline-block;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+    &:hover {
+        opacity: 1;
+    }
+
+    &__link {
+
+        &:before {
+            font-family: 'icomoon';
+            content: '\e904';
+            color: $White;
+            font-size: rem(40);
+        }
+    }
+}
+
+.social-inst {
+    display: inline-block;
+    margin-left: rem(13);
+    margin-right: 13px;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+    &:hover {
+        opacity: 1;
+    }
+
+    &__link {
+
+        &:before {
+            font-family: 'icomoon';
+            content: '\e903';
+            color: $White;
+            font-size: rem(40);
+        }
+    }
+}
+
+.footer-bottom {
+    padding-top: rem(79);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include tablets {
+        padding-top: 49px;
+    }
+}
+
+.inn__title {
+    margin-right: 20px;
+    @include fonts(med);
+    font-size: rem(20);
+}
+
+.inn__text-ogrn,
+.inn__text-inn {
+    font-size: rem(17);
+    @include fonts(light);
+    color: #ccc;
+}
+
+.privacy__policy {
+    @include fonts(light);
+    color: #ccc;
+    font-size: rem(20);
+    text-decoration: underline;
+}
+
+.privacy__year {
+    text-align: center;
+    font-size: rem(15);
+    @include fonts(light);
+    color: #ccc;
+
+    @include med_phones {
+        text-align: left;
+    }
+}
+
+.ymaps-2-1-62-map {
+    width: 100% !important;
+}

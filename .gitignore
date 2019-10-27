@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.vscode/
+/**/_backstage
+# /**/package-lock.json
+# /**/package.json
+/**/Thumbs.db
+/**/*.DS_Store
+# gulpfile.js
+# .eslintrcgit i

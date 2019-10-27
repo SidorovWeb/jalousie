@@ -1,0 +1,30 @@
+.mmenu
+	nav.mmenu__nav
+		ul.mmenu__list
+			each navItem in navigation
+				if navItem.hero == 'главная'
+					li.mmenu__item
+						a(href=`.${navItem.link}`, class=`mmenu__link slowly`)= navItem.hero
+				else
+					li.mmenu__item
+						a(href=`.${navItem.link}`, class=`mmenu__link slowly`)= navItem.title
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

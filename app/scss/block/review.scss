@@ -1,0 +1,252 @@
+.review {
+    padding-top: rem(6);
+    padding-bottom: 90px;
+    background-color: #fcfcfc;
+
+    @include desktop {
+        padding-bottom: 70px;
+    }
+
+    @include tablets {
+        padding-bottom: 60px;
+    }
+}
+
+.review > .container {
+
+    @include phones {
+        padding: 0;
+    }
+}
+
+.review-title {
+    padding-bottom: rem(68);
+
+    @include desktop {
+        padding-bottom: 48px;
+    }
+
+    @include tablets {
+        padding-bottom: 30px;
+    }
+}
+
+.slider-review {
+    position: relative;
+    min-height: 332px;
+    background-color: #f8f8f8;
+    .mini-slider {
+    position: relative;
+        margin: 0 auto;
+        height: 230px;
+        width: 320px;
+        background-color: lighten(#ccc, 5%);
+
+        @include laptop {
+            width: 100%;
+        }
+
+        @include tablets {
+            width: 320px;
+        }
+
+        .mini-slider__img {
+            height: 230px;
+        }
+        
+        .icon-arrow-left-light, .icon-arrow-right-light {
+            position: absolute;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.5s ease;
+
+            &:hover {
+                opacity: 1;
+            }
+            &:before {
+                font-size: 21px;
+                color: #66cc66;
+
+                @include tablets {
+                    font-size: 31px;
+                }
+            }
+        }
+        .icon-arrow-left-light {
+                top: 50%;
+                transform: translateY(-50%);
+                left: -40px;
+
+            @include laptop {
+                left: 10px;
+            }
+
+            @include tablets {
+                left: -40px;
+            }
+
+            @include med_phones {
+                left: 10px;
+            }
+        }
+        .icon-arrow-right-light {
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+
+            @include laptop {
+                right: 10px;
+            }
+
+            @include tablets {
+                right: -40px;
+            }
+
+            @include med_phones {
+                right: 10px;
+            }
+        }
+    }
+
+
+
+        .slick-dots {position: absolute;
+            bottom: -42px;
+        }
+}
+
+.slider-content {
+    padding-top: 51px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 51px;
+
+    @include phones {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.our-client {
+    padding-left: 28px;
+
+    @include laptop {
+        padding: 0;
+    }
+
+    @include tablets {
+        padding-top: 30px;
+    }
+
+    @include phones {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    &__foto, &__data {
+        display: inline-block;
+    }
+
+    &__data {
+        padding-top: 14px;
+        padding-left: 16px;
+        vertical-align: top;
+
+        &-name {
+            @include fonts(med);
+            font-size: 20px;
+        }
+
+        &-mail {
+            display: block;
+            margin-top: 5px;
+            font-size: 17px;
+            a {
+                color: #6699cc;
+                text-decoration: underline;
+                cursor: pointer;
+                transition: color 0.5s ease;
+
+                &:hover {
+                    color: lighten(#6699cc, 15%);
+                }
+            }
+        }
+    }
+
+    &__audio {
+        padding-top: 10px;
+    }
+
+    &__text {
+        padding-top: 14px;
+        color: #666666;
+    }
+
+}
+
+.mini-slider-modal .slick-dots {
+    bottom: rem(-67);
+
+    @include tablets {
+        bottom: -40px;
+    }
+}
+
+.slider-review .slick-dots li,
+.mini-slider-modal .slick-dots li {
+    width: 15px;
+    height: 15px;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    transform: scale(1);
+    &:hover {
+        background-color: $Green;
+        transform: scale(1.1);
+    }
+}
+
+.slider-review .slick-dots li:not(:last-child),
+.mini-slider-modal .slick-dots li:not(:last-child) {
+    margin-right: rem(8px);
+}
+
+.slider-review .slick-dots .slick-active,
+.mini-slider-modal .slick-dots .slick-active {
+    background-color: $Green;
+}
+
+/*.slider-review .slick-dots li button,
+.mini-slider-modal .slick-dots li button {
+    opacity: 0;
+    margin-left: -2.5px;
+    margin-top: -2px;
+}*/
+
+.slick-dots li button:before {
+    content: '';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

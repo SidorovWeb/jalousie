@@ -1,0 +1,56 @@
+section.section.js-top
+	.top-line
+		.container
+			.row
+				.col
+					.services
+						h1.services__head Производство, продажа и установка жалюзи
+						span.services__footer в Казани и Республике Татарстан
+					.phone
+						
+						a.phone-number(href="tel:8(999)9999999") 8 (999) 999-99-99
+							span.icon-phonelink
+							//- img.icon-phone(src="#", alt="")
+						p.time-work Режим работы с 9:00 до 18:00
+section.section
+	h2.visually-hidden Навигация.
+	nav.nav
+		.container
+			.row
+				.col
+					ul.nav__list
+						each navItem in navigation
+							if navItem.hero == 'главная'
+								li.nav__item.nav__item_active
+									a(href=`.${navItem.link}`, class=`nav__link slowly`)= navItem.hero
+							else
+								li.nav__item
+									a(href=`.${navItem.link}`, class=`nav__link slowly`)= navItem.title
+section.section
+	h2.visually-hidden Закажите выезд замерщика на дом.
+	header.header
+		.container
+			.row
+				.col
+					.header-inner
+						.header-desc
+							p.header-desc__text Установвим жалюзи в вашей квартире
+							p.header-desc__text за 2 часа с полной гарантией
+							p.header-desc__text и бесплатной доставкой
+						.exit-free Закажите выезд замерщика на дом. 
+							span.exit-free_orange Это бесплатно!
+						.button-block
+							a.btn.btn-call-orange.btn-call-orange_active.popup-with-move-anim.js-dialog_small(href='#small-dialog') вызвать замерщика
+							a.btn.btn-call-orange.btn_margin.popup-with-move-anim.js-dialog_big(href='#big-dialog') выбрать жалюзи
+
+
+
+
+
+
+
+
+
+
+
+

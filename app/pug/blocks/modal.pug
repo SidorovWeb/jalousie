@@ -1,0 +1,35 @@
+
+#small-dialog.zoom-anim-dialog.mfp-hide
+	.modal-header
+		h3.modal__title.modal__title_small
+			| для вызова замерщика оставьте свои данные
+	.modal-body
+		+form('form-modal_small','вызвать замерщика', 'w100')
+
+
+#med-dialog.zoom-anim-dialog.mfp-hide
+	.modal-header
+		h3.modal__title.modal__title_med
+			| задайте вопрос, и наш менеджер с радостью ответит на него
+	.modal-body
+		+form('form-modal_small','вызвать замерщика', 'w100', 'area')
+
+
+#big-dialog.zoom-anim-dialog.mfp-hide
+	.modal-body
+		h3.modal__title.modal__title_big
+			| вертикальные жалюзи
+		.slide.slide-modal
+			+mini-slider('mini-slider-modal', 'js-mini-slider-modal')
+			.slide__content--desc.modal-desc_big
+				.slide__content-inner
+					p.slide__content-paragraf
+						| Являются популярным видом жалюзи из-за своей универсальности и простоты конструкции. 
+					p.slide__content-paragraf
+						| В отличии от штор, позволяют плавно регулировать поток света в помещении.
+					p.slide__content-paragraf
+						| Одновременно с уникальностью дизайна, вертикальные жалюзи - это дешевая альтернатива традиционным шторам.
+					.slide__content-price от <span>999</span> рублей
+	.modal-footer
+		.modal-form
+			+form('form-modal_big','заказать жалюзи', 'w100')

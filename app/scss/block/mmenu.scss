@@ -1,0 +1,178 @@
+.mmenu {
+    display: none;
+    @include tablets {
+        display: block;
+        height: 1px;
+        opacity: 0;
+        visibility: hidden;
+        background-color: transparent;
+        overflow: hidden;
+    }
+}
+
+.mmenu_active {
+    @include tablets {
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 997;
+        opacity: 1;
+        height: 100%;
+        visibility: visible;
+        background-color: $Green;
+        transition: opacity 0.5s ease;
+    }
+}
+
+.mmenu__nav {
+    @include tablets {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+}
+
+.mmenu__list {
+    @include tablets {
+        margin: 0 auto;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+.mmenu__item {
+    position: relative;
+        overflow: hidden;
+        &:active {
+            &:after {
+                background-color: darken($Green, 16%);
+                opacity: .8;
+                background-color: darken($Green, 16%);
+            }
+            &:before {
+                opacity: .8;
+                background-color: darken($Green, 16%);
+            }
+        }
+
+        &:hover {
+            &:before {
+                height: 100%;
+            }
+            &:after {
+                height: 100%;
+            }
+        }
+
+        &:before {
+            @include bac-button(top, $Green, -50%);
+            transition: all 0.5s ease;
+        }
+
+        &:after {
+            @include bac-button(bottom, $Green, 50%);
+            transition: all 0.5s ease;
+        }
+}
+
+.mmenu__link {
+    @include tablets {position: relative;
+        height: 100%;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #fff;
+        @include fonts(bold);
+        @include padding(rem(14), rem(14), rem(14), rem(14));
+        font-size: rem(20);
+        background-color: transparent;
+        transition: all 0.5s ease;
+        z-index: 10;
+    }
+}
+
+
+/* mmenu-button*/
+
+.menu-icon {
+    position: fixed;
+    display: none;
+    top: 83px;
+    right: 15px;
+    z-index: 998;
+
+    @include tablets {
+        display: block;
+    }
+}
+
+.menu-icon span {
+    display: block;
+    width: 35px;
+    height: 30px;
+    height: 6px;
+    margin-bottom: 5px;
+    transition: .5s;
+    background-color: $Orange;
+}
+
+.menu-icon.menu-icon_active span:nth-child(2) {
+    transform: translateX(-50px);
+    opacity: 0;
+}
+
+.menu-icon.menu-icon_active span:nth-child(1) {
+    transform: rotateY(180deg) rotateZ(45deg) translate(10px, 10px);
+}
+
+.menu-icon.menu-icon_active span:nth-child(3) {
+    transform: rotateY(180deg) rotateZ(-45deg) translate(6px, -6px);
+}
+
+.menu-icon p {
+    display: block;
+    position: absolute;
+    width: 100%;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: transparent;
+    backface-visibility: hidden;
+    transition: .5s;
+}
+
+.menu-icon.menu-icon_active p.mmenu-open {
+    transform: rotateY(180deg);
+}
+
+.menu-icon_active {
+    top: 5rem;
+}
+.menu-icon p.mmenu-close {
+  transform: rotateY(180deg);
+}
+.menu-icon.menu-icon_active p.mmenu-close {
+  transform: rotateY(0deg);
+}
+
+
+
+.mmenu-open {
+    left: 0;
+    top: -20px;
+}
+.mmenu-close{
+  bottom: 2rem;
+  right: 5px;
+}
+
+
+

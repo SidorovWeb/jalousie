@@ -1,0 +1,28 @@
+{
+	"navigation": [
+		{
+			"hero": "главная",
+			"link": "js-top" 
+		},
+		{
+			"title": "виды жалюзи",
+			"link": "js-type" 
+		},
+		{
+			"title": "наши работы",
+			"link": "js-slider" 
+		},
+		{
+			"title": "акция",
+			"link": "js-stock" 
+		},
+		{
+			"title": "отзывы",
+			"link": "js-review" 
+		},
+		{
+			"title": "контакты",
+			"link": "js-footer" 
+		}
+	] 
+}
